@@ -11,11 +11,14 @@ support_functions = 'support functions';
 prev_dir = pwd; file_dir = fileparts(mfilename('fullpath')); 
 % cd(file_dir);
 addpath(genpath(pwd));
+
+imgDirPath = './h4_005_28_10_2024_first_data/pano_cam1_front/no_wb';
+
 % Adding support functions
 addpath(fullfile(prev_dir,support_functions));
 %% read source image sequence
-
-fileLists = dir(imgDirPath);% ���������ļ���
+fullPath = fullfile(prev_dir, imgDirPath);
+fileLists = dir(fullPath);% ���������ļ���
 disp('      ��ʼ������');
 %for i=3:length(fileLists)
     
@@ -37,7 +40,7 @@ FI = vi7(imgSeqColor);
 toc;
 %figure,imshow(FI);
 %imwrite(FI,'D:\Mathworkplace\V6\V5\results\7.jpg');
-imwrite(FI,['/home/sg24duk/git/thesis/vision7_code/h4_005_28_10_2024_first_data/pano_cam1_front/wb/lowgain/result/',num2str(i-2),'.jpg'])
+imwrite(FI,'./h4_005_28_10_2024_first_data/pano_cam1_front/wb/highgain/result/hdr_output.jpg')
 
 %end
 
