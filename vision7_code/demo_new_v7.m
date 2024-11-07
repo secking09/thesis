@@ -28,10 +28,10 @@ disp('      ��ʼ������');
   
 
 %imagePath = '.\test pictures';
-imgSeqColor = loadImg(imgDirPath,0.2); % use im2double
+imgSeqColor = loadImg(imgDirPath,1); % use im2double
 imgSeqColor = reorderByLum(imgSeqColor);
 
-imgSeqColor = downSample(imgSeqColor, 1024);
+% imgSeqColor = downSample(imgSeqColor, 1024);
 
 %% multi-exposure image fusion
 
