@@ -8,7 +8,7 @@ clc, clear, close all;
 support_functions = 'support functions';
 
 %% change directory
-prev_dir = pwd; file_dir = fileparts(mfilename('fullpath')); cd(file_dir);
+% cd(file_dir);
 addpath(genpath(pwd));
 % Adding support functions
 addpath(fullfile(prev_dir,support_functions));
