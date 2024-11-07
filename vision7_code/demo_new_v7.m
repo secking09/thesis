@@ -4,10 +4,14 @@
 %Chongqing University of Post and telecommunication
 clc, clear, close all;
 
+% Defining support functions folder
+support_functions = 'support functions';
+
 %% change directory
 prev_dir = pwd; file_dir = fileparts(mfilename('fullpath')); cd(file_dir);
 addpath(genpath(pwd));
-imgDirPath = '/home/sg24duk/git/thesis/vision7_code/h4_005_28_10_2024_first_data/pano_cam1_front/wb/lowgain';
+% Adding support functions
+addpath(fullfile(prev_dir,support_functions));
 %% read source image sequence
 
 fileLists = dir(imgDirPath);% ���������ļ���
