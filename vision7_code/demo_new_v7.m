@@ -10,12 +10,12 @@ addpath(genpath(pwd));
 imgDirPath = '/home/sg24duk/git/thesis/vision7_code/h4_005_28_10_2024_first_data/pano_cam1_front/wb/lowgain';
 %% read source image sequence
 
-fileLists = dir(imgDirPath);% °üº¬ËùÓÐÎÄ¼þ¼Ð
-disp('      ¿ªÊ¼£¡£¡£¡');
-for i=3:length(fileLists)
+fileLists = dir(imgDirPath);% ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½
+disp('      ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½');
+%for i=3:length(fileLists)
     
-    fprintf('Processing the %d......\n',i-2);
-    subPath = strcat(imgDirPath,'/',fileLists(i).name);
+%fprintf('Processing the %d......\n',i-2);
+%subPath = strcat(imgDirPath,'/',fileLists(i).name);
     %finalMaskPath = strcat(subPath,'\finalMask');
   
 
@@ -34,8 +34,8 @@ toc;
 %imwrite(FI,'D:\Mathworkplace\V6\V5\results\7.jpg');
 imwrite(FI,['/home/sg24duk/git/thesis/vision7_code/h4_005_28_10_2024_first_data/pano_cam1_front/wb/lowgain/result/',num2str(i-2),'.jpg'])
 
-end
+%end
 
-% 1£ºBaseMu
+% 1ï¿½ï¿½BaseMu
 % 2.fI
-% 3.¼ÓÈ¨fI
+% 3.ï¿½ï¿½È¨fI
