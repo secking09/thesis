@@ -4,26 +4,34 @@
 %Chongqing University of Post and telecommunication
 clc, clear, close all;
 
-%% change directory
-prev_dir = pwd; file_dir = fileparts(mfilename('fullpath')); cd(file_dir);
-addpath(genpath(pwd));
-imgDirPath = '/home/sg24duk/git/thesis/vision7_code/h4_005_28_10_2024_first_data/pano_cam1_front/wb/lowgain';
-%% read source image sequence
+% Defining support functions folder
+support_functions = 'support functions';
 
-fileLists = dir(imgDirPath);% °üº¬ËùÓÐÎÄ¼þ¼Ð
-disp('      ¿ªÊ¼£¡£¡£¡');
-for i=3:length(fileLists)
+%% change directory
+prev_dir = pwd; file_dir = fileparts(mfilename('fullpath')); 
+% cd(file_dir);
+addpath(genpath(pwd));
+
+imgDirPath = './h4_005_28_10_2024_first_data/pano_cam1_front/no_wb';
+
+% Adding support functions
+addpath(fullfile(prev_dir,support_functions));
+%% read source image sequence
+fullPath = fullfile(prev_dir, imgDirPath);
+fileLists = dir(fullPath);% ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½
+disp('      ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½');
+%for i=3:length(fileLists)
     
-    fprintf('Processing the %d......\n',i-2);
-    subPath = strcat(imgDirPath,'/',fileLists(i).name);
+%fprintf('Processing the %d......\n',i-2);
+%subPath = strcat(imgDirPath,'/',fileLists(i).name);
     %finalMaskPath = strcat(subPath,'\finalMask');
   
 
 %imagePath = '.\test pictures';
-imgSeqColor = loadImg(imgDirPath,0.2); % use im2double
+imgSeqColor = loadImg(imgDirPath,1); % use im2double
 imgSeqColor = reorderByLum(imgSeqColor);
 
-imgSeqColor = downSample(imgSeqColor, 1024);
+% imgSeqColor = downSample(imgSeqColor, 1024);
 
 %% multi-exposure image fusion
 
@@ -32,10 +40,10 @@ FI = vi7(imgSeqColor);
 toc;
 %figure,imshow(FI);
 %imwrite(FI,'D:\Mathworkplace\V6\V5\results\7.jpg');
-imwrite(FI,['/home/sg24duk/git/thesis/vision7_code/h4_005_28_10_2024_first_data/pano_cam1_front/wb/lowgain/result/',num2str(i-2),'.jpg'])
+imwrite(FI,'./h4_005_28_10_2024_first_data/pano_cam1_front/wb/highgain/result/hdr_output.jpg')
 
-end
+%end
 
-% 1£ºBaseMu
+% 1ï¿½ï¿½BaseMu
 % 2.fI
-% 3.¼ÓÈ¨fI
+% 3.ï¿½ï¿½È¨fI
